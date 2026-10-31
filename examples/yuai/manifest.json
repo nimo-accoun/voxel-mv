@@ -1,0 +1,18 @@
+{
+  "example": "yuai",
+  "duration_frames": 1065,
+  "fps": 24,
+  "cast": [
+    "claude",
+    "deepseek"
+  ],
+  "skill_commit": "622923962f843efaf25e153d6f893e6843603233",
+  "source_media_sha256": "c5c251cc5632dcd6c6ffd6d94f0783122e1ca5fb142ae8965aed24e2fc043e97",
+  "source_media_name": "我不在乎什么天长地久#雨爱 #雨爱dj #音乐分享 #杨丞琳.mp4",
+  "reports": "Copied from original project; not regenerated during packaging.",
+  "runtime_differences": [
+    "tools/gpu_check.mjs",
+    "tools/voxel_dump.mjs",
+    "tools/songmv/probe_dump.mjs"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+ "segment": "MV",
+ "maker": "雨爱",
+ "lead": "claude",
+ "start": 0,
+ "end": 1065,
+ "tempo": {
+  "beat0": 0.1787,
+  "spb": 0.4177
+ },
+ "cast": ["claude", "deepseek"],
+ "scenes": [
+  {"id": "A", "f0": 0, "f1": 275, "world": "桌面上的黑胶唱片，外圈是一圈方块小城", "look": "深夜靛蓝 + 霓虹粉紫", "energy": "收", "camera": "大俯拍缓推"},
+  {"id": "B", "f0": 275, "f1": 596, "world": "唱片沟槽变成的雨巷", "look": "青绿夜雨 + 暖橙窗光", "energy": "展开", "camera": "侧面跟拍"},
+  {"id": "C", "f0": 596, "f1": 917, "world": "唱片上的水花舞池", "look": "洋红 + 金", "energy": "放（全片最高潮）", "camera": "广角环绕 → 低机位"},
+  {"id": "D", "f0": 917, "f1": 1065, "world": "黎明回到唱片桌面", "look": "黎明浅蓝 + 暖橘", "energy": "收", "camera": "长拉远"}
+ ],
+ "shots": [
+  {"id": "S01", "f0": 0, "f1": 154, "scene": "A", "camera": "俯拍微距缓推", "note": "唱针待落，落针点亮全城"},
+  {"id": "S02", "f0": 155, "f1": 274, "scene": "A", "camera": "低角度近景推近", "note": "伞下接雨"},
+  {"id": "S03", "f0": 275, "f1": 434, "scene": "B", "camera": "侧面跟拍", "note": "共伞走进沟槽街道"},
+  {"id": "S04", "f0": 435, "f1": 595, "scene": "B", "camera": "雨棚下中近景", "note": "递心、鞠躬"},
+  {"id": "S05", "f0": 596, "f1": 755, "scene": "C", "camera": "广角环绕", "note": "舞池开始，水花随拍"},
+  {"id": "S06", "f0": 756, "f1": 916, "scene": "C", "camera": "低机位近景", "note": "光柱与最大水花"},
+  {"id": "S07", "f0": 917, "f1": 1036, "scene": "D", "camera": "长拉远", "note": "针抬起，两人坐下"},
+  {"id": "S08", "f0": 1037, "f1": 1064, "scene": "D", "camera": "尾镜", "note": "方块彩虹"}
+ ],
+ "cuts": [
+  {"c": 155, "len": 14, "mode": "whip", "from": "S01", "to": "S02", "note": "跟着她抬手接雨横甩"},
+  {"c": 275, "len": 14, "mode": "through", "from": "S02", "to": "S03", "note": "穿过唱片上的水洼进入沟槽街道"},
+  {"c": 435, "len": 12, "mode": "whip_up", "from": "S03", "to": "S04", "note": "上摇到雨棚下的两人"},
+  {"c": 596, "len": 16, "mode": "crumble", "from": "S04", "to": "S05", "note": "街道碎裂坠下，露出水花舞池"},
+  {"c": 756, "len": 2, "mode": 0, "kind": "cut", "from": "S05", "to": "S06", "note": "卡拍硬切推近舞池"},
+  {"c": 917, "len": 16, "mode": "pullback", "from": "S06", "to": "S07", "note": "拉远回到唱片桌面"},
+  {"c": 1037, "len": 12, "mode": "rain", "from": "S07", "to": "S08", "note": "方块雨落下，彩虹亮起"}
+ ],
+ "incamera": [],
+ "handoffs": [],
+ "handoff_cards": {},
+ "emotes": [
+  {"who": "claude", "g": "heart", "f0": 265, "f1": 305, "dx": 0.34},
+  {"who": "claude", "g": "note", "f0": 415, "f1": 445, "dx": 0.3},
+  {"who": "deepseek", "g": "sparkle", "f0": 505, "f1": 545, "dx": -0.3},
+  {"who": "deepseek", "g": "heart", "f0": 636, "f1": 686, "dx": -0.36},
+  {"who": "claude", "g": "star", "f0": 756, "f1": 796, "dx": 0.34},
+  {"who": "deepseek", "g": "note", "f0": 846, "f1": 886, "dx": -0.3},
+  {"who": "claude", "g": "sparkle", "f0": 997, "f1": 1027, "dx": 0.32}
+ ],
+ "tracks": {
+  "claude": [
+   ["loop", "idle", 0, 25],
+   ["once", "look_up", 25, 45],
+   ["once", "reach_out", 65, 85],
+   ["once", "laugh", 105, 125],
+   ["once", "look_up", 135, 155],
+   ["once", "reach_out", 165, 185],
+   ["once", "laugh", 195, 215],
+   ["once", "reach_out", 225, 245],
+   ["loop", "idle", 245, 275],
+   ["loop", "walk_side", 275, 355],
+   ["once", "look_up", 355, 375],
+   ["once", "laugh", 395, 415],
+   ["once", "reach_out", 415, 435],
+   ["once", "laugh", 435, 455],
+   ["once", "hold_look", 475, 495],
+   ["once", "bow", 515, 535],
+   ["loop", "laugh", 535, 596],
+   ["loop", "laugh", 596, 636],
+   ["once", "reach_out", 636, 656],
+   ["loop", "wave_bye", 656, 696],
+   ["once", "bow", 696, 716],
+   ["loop", "laugh", 716, 756],
+   ["loop", "wave_bye", 756, 796],
+   ["once", "reach_out", 796, 816],
+   ["loop", "laugh", 816, 877],
+   ["once", "bow", 877, 897],
+   ["loop", "laugh", 897, 917],
+   ["loop", "sit_idle", 917, 925],
+   ["once", "look_up", 925, 949],
+   ["loop", "sit_idle", 949, 997],
+   ["once", "hug_knees", 997, 1065]
+  ],
+  "deepseek": [
+   ["loop", "walk_side", 275, 355],
+   ["loop", "stream_wink", 355, 395],
+   ["loop", "stream_happy", 395, 435],
+   ["loop", "stream_shy", 435, 475],
+   ["once", "stream_heart", 475, 495],
+   ["loop", "stream_happy", 495, 535],
+   ["loop", "stream_sing", 535, 596],
+   ["loop", "stream_dance_step", 596, 656],
+   ["loop", "stream_dance_hands", 656, 716],
+   ["loop", "stream_bounce", 716, 756],
+   ["loop", "stream_dance_hands", 756, 816],
+   ["loop", "stream_happy", 816, 877],
+   ["loop", "stream_bounce", 877, 917],
+   ["loop", "sit_idle", 917, 1037],
+   ["once", "hug_knees", 1037, 1065]
+  ]
+ },
+ "extra_actions": {
+  "claude": ["idle", "walk_side", "look_up", "reach_out", "laugh", "bow", "sit_idle", "wave_bye", "hug_knees", "hold_look"],
+  "deepseek": ["walk_side", "look_up", "sit_idle", "stream_wink", "stream_happy", "stream_shy", "stream_heart", "stream_sing", "stream_dance_step", "stream_dance_hands", "stream_bounce", "hug_knees"]
+ },
+ "sizes": {},
+ "occlude": [],
+ "treadmill": []
+}

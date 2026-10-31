@@ -5,6 +5,8 @@ description: 把一首歌（音频，最好再带 LRC 歌词）做成「方块�
 
 # voxel-mv · 歌曲 → 方块体素微缩世界 MV
 
+许可范围见 [LICENSE](LICENSE) 和 [中文说明](LICENSE.zh-CN.md)：本项目自有代码及技能文档按非商业许可提供，第三方内容及素材例外见 [清单](THIRD_PARTY_NOTICES.md)。分发复制的项目源码时保留这些声明；本说明不宣称用户原创输出自动归本项目所有。
+
 你是这支 MV 的导演兼动画师。画面是 three.js 实时渲染的 3D 场景：体素方块搭的微缩世界，像摆在桌上拍的手办和模型；角色是 sprite-frames 技能出的帧动画，做成立牌站在场景里。`render(t)` 逐帧确定性绘制，`tools/run.py` 出片。
 
 这个技能是 song-mv 的「方块体素」特调版。和 song-mv 一样，它只给你**目标**、**硬关**、**工具**；不同的是**画风已经定了**（见 `STYLE.md`），并且给了一套现成的引擎，角色、贴地、踩拍、转场、后期这些费力又容易出错的事都已经做好。
@@ -56,9 +58,7 @@ description: 把一首歌（音频，最好再带 LRC 歌词）做成「方块�
 
 - **拆段的好处**：每段是一个独立的小项目，渲染和检查快，出错只重做一段；几段可以交给不同的 AI 同时做；每段天然换一个世界和主色，长片不容易闷。代价是段与段之间要设计交接（见 `references/relay.md`），最后要拼接。
 - **参考**：歌在 3 分钟左右或更长、段落多（两遍以上主副歌加桥段）时，通常拆成几段更好做，每段 30–60 秒，切在段落分界或小节线上，每段里照样是 10–20 秒一个场景；短歌、或者整首就是一个连续的场面（一镜到底、一个房间里的一夜），做成一个项目。
-- **拆段的做法**：先把全曲的 TREATMENT 和场景表写完（整首的起承转合在这一步定），再按段 `new_project.py <段目录> … --from <段起点秒> --seconds <段长秒>`，每段的 `plan.json` 写本段的场景和 `handoffs`。一个 AI 做全部时按顺序一段一段做完；分给别的 AI 时给每段写开工包（`examples/S2_开工包/` 是样子）。全部做完 `python $SKILL/scripts/analyze_audio.py         节奏分析（只要 numpy + ffmpeg）：拍点、小节、重击点、段落、drop → audio.timeline.json + audio.report.md
-scripts/fetch_lyrics.py          找歌词：lrclib.net 同步歌词 → faster-whisper 识别（可选 demucs 分离人声）→ 都没有就跳过字幕
-scripts/join_segments.py 成片.mp4 --audio 原曲 段1 段2 …` 拼起来。
+- **拆段的做法**：先把全曲的 TREATMENT 和场景表写完（整首的起承转合在这一步定），再按段 `new_project.py <段目录> … --from <段起点秒> --seconds <段长秒>`，每段的 `plan.json` 写本段的场景和 `handoffs`。一个 AI 做全部时按顺序一段一段做完；分给别的 AI 时给每段写开工包（`examples/S2_开工包/` 是样子）。全部做完 `python $SKILL/scripts/join_segments.py 成片.mp4 --audio 原曲 段1 段2 …` 拼起来。
 
 不管哪种，场景关都在每个项目里跑：每段里的场景也要 10–20 秒一个、相邻的要换；段与段交界处的两个场景也算相邻，写 TREATMENT 时就让它们不一样。
 
@@ -81,6 +81,7 @@ references/plan-format.md        plan.json 每个字段
 references/relay.md              分段做：分段、交接卡、开工包、拼接
 references/common-problems.md    常见问题和修法
 references/style/                画风参考图：01/02 两张角色合图（风格样张关拿它们对照），和帧图一致
+examples/yuai/                   《雨爱》完整源码示例、原始提示词、预览、检查报告；复现见 examples/yuai/README.md
 examples/S1_相遇/                《把回忆拼好给你》第 1 段（Claude 做）的源码、检查报告、接触表、风格样张记录
 ```
 

@@ -34,6 +34,9 @@ for c in cast:
         sys.exit(f'找不到角色 {c}：{os.path.join(A.chars, c, "frames.json")} 不存在。' + (f'现在能用的角色：{", ".join(have)}。' if have else '') + f'角色放法见 {os.path.join(SKILL, "characters/README.md")}')
 
 # ---------- 引擎、工具、页面 ----------
+for notice in ('LICENSE', 'LICENSE.zh-CN.md', 'THIRD_PARTY_NOTICES.md'):
+    shutil.copy2(os.path.join(SKILL, notice), os.path.join(P, notice))
+shutil.copytree(os.path.join(SKILL, 'LICENSES'), os.path.join(P, 'LICENSES'), dirs_exist_ok=True)
 for d in ('engine', 'vendor', 'tools'):
     shutil.copytree(os.path.join(KIT, d), os.path.join(P, d), dirs_exist_ok=True, ignore=shutil.ignore_patterns('node_modules', '__pycache__'))
 for f, dst in (('index.html', 'index.html'), ('shots_placeholder.js', 'shots.js')):

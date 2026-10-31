@@ -1,0 +1,6 @@
+node_modules/
+__pycache__/
+*.pyc
+examples/yuai/project/out/
+examples/yuai/project/data/song.wav
+examples/yuai/project/assets/*/frames/

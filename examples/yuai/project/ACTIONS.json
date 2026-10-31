@@ -1,0 +1,204 @@
+{
+ "note": "由 plan.json 的动作轨生成（python tools/make_actions.py）。subtle 里的动作不算进动作关 G4，但分镜里照样要做",
+ "actions": [
+  {
+   "line": "L01",
+   "who": "claude",
+   "beat": 8,
+   "act": "伸手到位",
+   "frame": 85
+  },
+  {
+   "line": "L02",
+   "who": "claude",
+   "beat": 12,
+   "act": "开心笑到位",
+   "frame": 125
+  },
+  {
+   "line": "L03",
+   "who": "claude",
+   "beat": 18,
+   "act": "伸手到位",
+   "frame": 185
+  },
+  {
+   "line": "L03",
+   "who": "claude",
+   "beat": 21,
+   "act": "开心笑到位",
+   "frame": 215
+  },
+  {
+   "line": "L03",
+   "who": "claude",
+   "beat": 24,
+   "act": "伸手到位",
+   "frame": 245
+  },
+  {
+   "line": "L04",
+   "who": "claude",
+   "beat": 41,
+   "act": "开心笑到位",
+   "frame": 415
+  },
+  {
+   "line": "L05",
+   "who": "claude",
+   "beat": 43,
+   "act": "伸手到位",
+   "frame": 435
+  },
+  {
+   "line": "L05",
+   "who": "claude",
+   "beat": 45,
+   "act": "开心笑到位",
+   "frame": 455
+  },
+  {
+   "line": "L07",
+   "who": "claude",
+   "beat": 53,
+   "act": "鞠躬道谢到位",
+   "frame": 535
+  },
+  {
+   "line": "L07",
+   "who": "claude",
+   "beat": 53,
+   "act": "开心笑",
+   "frame": 535
+  },
+  {
+   "line": "L08",
+   "who": "claude",
+   "beat": 59,
+   "act": "开心笑",
+   "frame": 596
+  },
+  {
+   "line": "L08",
+   "who": "claude",
+   "beat": 65,
+   "act": "伸手到位",
+   "frame": 656
+  },
+  {
+   "line": "L08",
+   "who": "claude",
+   "beat": 65,
+   "act": "挥手告别",
+   "frame": 656
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 71,
+   "act": "鞠躬道谢到位",
+   "frame": 716
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 71,
+   "act": "开心笑",
+   "frame": 716
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 81,
+   "act": "伸手到位",
+   "frame": 816
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 81,
+   "act": "开心笑",
+   "frame": 816
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 89,
+   "act": "鞠躬道谢到位",
+   "frame": 897
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 89,
+   "act": "开心笑",
+   "frame": 897
+  }
+ ],
+ "subtle": [
+  {
+   "line": "L01",
+   "who": "claude",
+   "beat": 4,
+   "act": "仰望（看烟花/天空）到位",
+   "frame": 45,
+   "why": "帧图里关键点只动了身高的 2%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L02",
+   "who": "claude",
+   "beat": 15,
+   "act": "仰望（看烟花/天空）到位",
+   "frame": 155,
+   "why": "帧图里关键点只动了身高的 2%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L04",
+   "who": "claude",
+   "beat": 27,
+   "act": "侧面走",
+   "frame": 275,
+   "why": "帧图里关键点只动了身高的 15%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L04",
+   "who": "deepseek",
+   "beat": 27,
+   "act": "侧面走",
+   "frame": 275,
+   "why": "帧图里关键点只动了身高的 15%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L04",
+   "who": "claude",
+   "beat": 37,
+   "act": "仰望（看烟花/天空）到位",
+   "frame": 375,
+   "why": "帧图里关键点只动了身高的 2%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L06",
+   "who": "claude",
+   "beat": 49,
+   "act": "捧着东西看（回忆碎片）到位",
+   "frame": 495,
+   "why": "帧图里关键点只动了身高的 4%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L06",
+   "who": "deepseek",
+   "beat": 49,
+   "act": "比心到位",
+   "frame": 495,
+   "why": "帧图里关键点只动了身高的 13%，动作关量不出来：用推近、表情符号或特效强调"
+  },
+  {
+   "line": "L09",
+   "who": "claude",
+   "beat": 75,
+   "act": "挥手告别",
+   "frame": 756,
+   "why": "帧图里关键点只动了身高的 5%，动作关量不出来：用推近、表情符号或特效强调"
+  }
+ ]
+}

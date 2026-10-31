@@ -1,0 +1,33 @@
+voxel-mv — licensing scope
+
+This is a source-available project for noncommercial use, not an
+OSI-approved open-source distribution. It contains separately licensed works.
+
+Project-owned software is offered under the unmodified PolyForm
+Noncommercial License 1.0.0 in LICENSES/PolyForm-Noncommercial-1.0.0.txt.
+This covers project-owned contributions in scripts/, kit/engine/, kit/tools/
+and example software, subject to the exclusions below.
+
+Project-owned skill instructions and documentation are offered under
+CC BY-NC-SA 4.0 in LICENSES/CC-BY-NC-SA-4.0.txt. This includes SKILL.md,
+STYLE.md, README files, references text and project-owned example narratives.
+For attribution, retain supplied author notices and identify voxel-mv and
+its source: https://github.com/xiaosia/voxel-mv
+
+EXCLUSIONS TAKE PRECEDENCE:
+- Third-party code, fonts, copied text and other third-party material retain
+  their original terms. See THIRD_PARTY_NOTICES.md and nested licenses.
+- Character images, reference images, example screenshots, lyrics, recordings,
+  logos and other assets with unverified rights are NOT newly licensed here.
+  No permission to reuse them is inferred from their presence in this repository.
+- Earlier licenses validly granted by the relevant rights holders are not
+  revoked by this notice. These licenses cover only rights the licensor holds.
+- The project license does not automatically apply to a user's original
+  output or assign ownership of generated videos to this project.
+
+In generated projects, engine/, tools/ and vendor/ correspond to kit/engine/,
+kit/tools/ and kit/vendor/ in the source repository. Copied files retain their
+licenses; user-created files are not automatically licensed by this notice.
+
+See LICENSE.zh-CN.md for a non-authoritative Chinese explanation. The full
+license texts control; explanatory examples do not add to or override them.

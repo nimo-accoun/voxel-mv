@@ -1,0 +1,2 @@
+frames 178  median diff 15.88  min 1.92
+no frozen stretch >= 1 s
