@@ -39,7 +39,7 @@ function setupShot(f, sf) {
 | `R.setSky(颜色, 雾近, 雾远, 顶色?, 顶色比例?)`、`R.keyAt(x,y,z, 颜色, 亮度)`、`R.hemi`、`R.key` | 天空、主光、环境光 |
 | `R.box(父, 宽,高,深, 颜色, x,y,z, {emissive, ei, opacity, cast})` | 一个方块，(x,y,z) 是底面中心 |
 | `R.rbox(…同上, {r})` | 圆角方块（近处大件用） |
-| `R.instanced(父, 数量, 颜色, {emissive, opacity})` + `R.setInst(im, i, x,y,z, sx,sy,sz, rx,ry,rz)` | 大量方块（地砖、草、雨、粒子），改完 `im.instanceMatrix.needsUpdate = true` |
+| `R.instanced(父, 数量, 颜色, {emissive, opacity})` + `R.setInst(im, i, x,y,z, sx,sy,sz, rx,ry,rz)` | 大量方块（地砖、草、雨、粒子），改完 `im.instanceMatrix.needsUpdate = true`。**没用到的槽位要藏掉**（`setInst` 到 y=-80、缩放 0），它们默认停在原点；用过 `setColorAt` 的 InstancedMesh，没设色的槽位是黑的，会渲染成黑方块（V6 死黑） |
 | `R.addGround(组)` | 登记会站人的地面（贴地、防穿模、体素关 V2 都靠它） |
 | `R.groundAt(x, y, z)` | 查这里的地面高度 |
 | `R.play(名字, f, x,y,z, 选项)` | 按动作轨摆角色；这一帧轨里没她就隐藏，返回 false |

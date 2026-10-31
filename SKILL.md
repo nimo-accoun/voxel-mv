@@ -101,7 +101,7 @@ examples/S1_相遇/                《把回忆拼好给你》第 1 段（Claude
 
 环境：Node.js ≥ 20、ffmpeg、Python 3（numpy、pillow）、Chrome / Edge（或 `PLAYWRIGHT_CHROME` 指向浏览器）。缺什么 `run.py doctor` 会说，并给出安装命令。
 
-自动找的歌词（`data/analysis/lyrics.lrc`）：网上查到的可能是别的版本，识别出来的会有错字。写 TREATMENT 前对着歌听开头几句，不对就改这个文件，再用 `--lrc` 重建项目；告诉用户歌词是自动找的。
+自动找的歌词（原始文件 `data/analysis/lyrics.lrc`，项目字幕源是 `data/lyrics.lrc`）：网上查到的可能是别的版本，识别出来的会有错字。写 TREATMENT 前对着歌听开头几句，不对就改 `data/lyrics.lrc`，再用 `--lrc data/lyrics.lrc` 重建项目（重建不会覆盖 `plan.json`、`shots.js`、`index.html`）；告诉用户歌词是自动找的。
 
 自动分析的节拍：拍点一般很准；段落和 drop 是估计，写 TREATMENT 时用耳朵核对。速度差一倍（报告里 BPM 明显不对）就 `python $SKILL/scripts/analyze_audio.py song.mp3 --bpm 大概的值 --out 项目/data/analysis` 重分析，再用 `--timeline` 重建项目。
 
@@ -158,7 +158,7 @@ python tools/run.py video --redo C,D     # 只重渲场景 C、D（或者秒数�
 
 - **角色**：`R.play(名字, f, x, y, z)` 按动作轨摆，你只给脚底的世界坐标；身高统一是 `R.H` = 2 个世界单位，不要单独缩放主角。站的地方用 `R.addGround()` 登记，给个大概的 y，引擎会贴到真实表面。立牌朝向镜头、前移防遮挡都是引擎在镜头摆好之后自动做的。
 - **走路**：动作轨里的走路一拍一步，你的代码要让角色在世界里每拍前进 0.4 身高（0.8 单位），跑步 1.6 身高（3.2 单位），脚才不打滑（V3）。镜头跟拍时也要真的移动角色，再让镜头跟上。
-- **转场**：先在 TREATMENT 里给每次换场定种类和落点（哪一拍、哪条小节线、哪个 hit）。引擎的 8 种体素转场（`rain` 方块雨落、`crumble` 碎裂崩塌、`voxel` 体素化、`rows` 横条滑移、`through` 穿梭推进、`pullback` 拉远、`whip` / `whip_up` 甩镜）是现成可用的，不是白名单：自己写新的也行，在 `overlay` 里画、或者改着色器，只要登记。不要退回硬切和普通淡入淡出。
+- **转场**：先在 TREATMENT 里给每次换场定种类和落点（哪一拍、哪条小节线、哪个 hit）。引擎的 8 种体素转场（`rain` 方块雨落、`crumble` 碎裂崩塌、`voxel` 体素化、`rows` 横条滑移、`through` 穿梭推进、`pullback` 拉远、`whip` / `whip_up` 甩镜）是现成可用的，不是白名单：自己写新的也行，在 `overlay` 里画、或者改着色器，只要登记。拍点上的硬切也是合法的一手（`mode: 0` + `kind: "cut"`、2 帧，T2 给硬切留了 ≤30% 的额度），前提是前后两个镜头有明显区别；普通淡入淡出不要用，硬切也不要连着用。
 - **表情**：不出表情图，用代码拼的方块符号（16 种，`plan.json` 的 `emotes`），在拍上弹出。
 - **字幕**：引擎在句首自动出字幕，样式在 `index.html` 的 `#cap` 里改；字高 ≥ 画面高 4.5%，任何背景上都看得清。
 - **关键时刻取 `TL` 里的时间**（`beat_times`、`bar_times`、`hits`），帧号用 `R.beatFrame(n)`，不要手写秒数。
