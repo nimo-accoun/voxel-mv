@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""建一个 voxel-mv 项目：拷引擎和工具、转音频、生成节拍和歌词数据、接入角色、写空白 plan.json 和占位 shots.js。
+用法：
+  python $SKILL/scripts/new_project.py <项目目录> --audio song.mp3 [--lrc lyrics.lrc] [--timeline audio.timeline.json] [--report audio.report.md]
+         --cast claude,deepseek [--lead claude] [--name 我的MV] [--chars <角色目录>] [--seconds 30]
+  --lrc      歌词；不给就用 scripts/fetch_lyrics.py 自动找（联网查 lrclib → 本地语音识别 → 都没有就不做字幕）。
+             --title / --artist 帮它找对歌；--no-lyrics 不找、不要字幕
+  --timeline 节奏分析结果；不给就自动用 scripts/analyze_audio.py 分析音频（只要 numpy 和 ffmpeg）
+  --cast     用哪些角色，名字是角色目录下的文件夹名（默认在 $SKILL/characters/ 里找）
+  --lead     主角（默认 cast 的第一个）
+  --seconds  只做多少秒（试做、测试用；默认到歌尾）
+  --from     从第几秒开始（多段接力时做其中一段，见 references/relay.md；页面里仍然用全曲时间）
+角色目录的格式见 $SKILL/characters/README.md（sprite-frames 技能的产出：frames.json + frames/<动作>/NN.png）。
+做完后：cd <项目目录>，python tools/run.py doctor，然后 python tools/run.py still 1 5 看占位画面。"""
+import argparse, json, os, shutil, subprocess, sys
+if hasattr(sys.stdout, 'reconfigure'): sys.stdout.reconfigure(encoding='utf-8', errors='replace'); sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+os.environ['PYTHONUTF8'] = '1'; os.environ['PYTHONIOENCODING'] = 'utf-8'   # 子脚本读写文件、打印中文都用 UTF-8（中文 Windows 默认是 GBK）
+HERE = os.path.dirname(os.path.abspath(__file__)); SKILL = os.path.dirname(HERE); KIT = os.path.join(SKILL, 'kit')
+ap = argparse.ArgumentParser(); ap.add_argument('project')
+ap.add_argument('--audio', required=True); ap.add_argument('--timeline')
+ap.add_argument('--lrc'); ap.add_argument('--report'); ap.add_argument('--no-lyrics', action='store_true')
+ap.add_argument('--title'); ap.add_argument('--artist')
+ap.add_argument('--cast', required=True); ap.add_argument('--lead'); ap.add_argument('--name', default='MV')
+ap.add_argument('--chars', default=os.path.join(SKILL, 'characters')); ap.add_argument('--seconds', type=float)
+ap.add_argument('--from', dest='frm', type=float, default=0.0)
+A = ap.parse_args()
+P = os.path.abspath(A.project); os.makedirs(P, exist_ok=True)
+if not os.path.exists(A.audio): sys.exit(f'找不到音频文件：{A.audio}')
+if shutil.which('ffmpeg') is None: sys.exit('没找到 ffmpeg：先装 ffmpeg（Windows：winget install Gyan.FFmpeg；macOS：brew install ffmpeg），装完重开终端')
+cast = [c.strip() for c in A.cast.split(',') if c.strip()]
+for c in cast:
+    if not os.path.exists(os.path.join(A.chars, c, 'frames.json')):
+        have = sorted(d for d in os.listdir(A.chars) if os.path.exists(os.path.join(A.chars, d, 'frames.json'))) if os.path.isdir(A.chars) else []
+        sys.exit(f'找不到角色 {c}：{os.path.join(A.chars, c, "frames.json")} 不存在。' + (f'现在能用的角色：{", ".join(have)}。' if have else '') + f'角色放法见 {os.path.join(SKILL, "characters/README.md")}')
+
+# ---------- 引擎、工具、页面 ----------
+for d in ('engine', 'vendor', 'tools'):
+    shutil.copytree(os.path.join(KIT, d), os.path.join(P, d), dirs_exist_ok=True, ignore=shutil.ignore_patterns('node_modules', '__pycache__'))
+for f, dst in (('index.html', 'index.html'), ('shots_placeholder.js', 'shots.js')):
+    if not os.path.exists(os.path.join(P, dst)): shutil.copy(os.path.join(KIT, f), os.path.join(P, dst))
+shutil.copytree(os.path.join(SKILL, 'references/style'), os.path.join(P, 'ref/style'), dirs_exist_ok=True)
+open(os.path.join(P, 'MODE'), 'w', encoding='utf-8').write('safe\n') if not os.path.exists(os.path.join(P, 'MODE')) else None
+
+# ---------- 数据 ----------
+D = os.path.join(P, 'data'); os.makedirs(D, exist_ok=True); os.makedirs(os.path.join(P, 'src'), exist_ok=True)
+if not A.timeline:   # 没给节奏分析：自动分析
+    an = os.path.join(D, 'analysis'); os.makedirs(an, exist_ok=True)
+    subprocess.run([sys.executable, os.path.join(HERE, 'analyze_audio.py'), A.audio, '--out', an], check=True)
+    A.timeline = os.path.join(an, 'audio.timeline.json'); A.report = A.report or os.path.join(an, 'audio.report.md')
+TL = json.load(open(A.timeline, encoding='utf-8'))
+OFF = round(A.frm * 24) / 24                                    # 段起点对齐到整帧
+dur = (TL['duration'] - OFF) if not A.seconds else min(TL['duration'] - OFF, A.seconds)
+dur = round(dur * 24) / 24
+B = TL['beat_times']; n = len(B)                                 # 节拍网格按全曲拟合（引擎用全曲时间）
+mx, my = (n - 1) / 2, sum(B) / n
+spb = sum((i - mx) * (b - my) for i, b in enumerate(B)) / sum((i - mx) ** 2 for i in range(n)); beat0 = my - spb * mx
+err = max(abs(beat0 + i * spb - b) for i, b in enumerate(B))
+if err > 1.5 / 24: print(f'提醒：这首歌节拍不太匀（固定网格最大偏差 {err * 1000:.0f} ms）。引擎的踩拍按固定网格走，关键动作建议直接用 TL.beat_times 的时间。')
+cut = ['-ss', f'{OFF:.4f}', '-t', f'{dur:.4f}'] if (A.seconds or OFF) else []
+subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', A.audio, *cut, '-ar', '44100', '-ac', '2', os.path.join(D, 'song.wav')], check=True)
+if A.seconds or OFF:   # 截一段：时间轴换成本段本地时间（检查脚本用本地时间，页面用全曲时间 = 本地 + 段起点）
+    def sh_(x):
+        if isinstance(x, (int, float)): return round(x - OFF, 4)
+        if isinstance(x, dict): return {k: (round(v - OFF, 4) if k in ('time', 'start', 'end', 't') and isinstance(v, (int, float)) else v) for k, v in x.items()}
+        return x
+    def tt(x): return x if isinstance(x, (int, float)) else x.get('time', x.get('start', x.get('t', 0)))
+    keepb = [i for i, b in enumerate(TL['beat_times']) if OFF - 1e-6 <= b < OFF + dur]
+    for k in ('energy_per_beat', 'vocal_activity_per_beat'):
+        if k in TL: TL[k] = [TL[k][i] for i in keepb if i < len(TL[k])]
+    keepbar = [i for i, b in enumerate(TL.get('bar_times', [])) if OFF - 1e-6 <= b < OFF + dur]
+    if 'energy_per_bar' in TL: TL['energy_per_bar'] = [TL['energy_per_bar'][i] for i in keepbar if i < len(TL['energy_per_bar'])]
+    for k in ('beat_times', 'bar_times', 'hits', 'drops', 'sections'):
+        if k in TL: TL[k] = [sh_(x) for x in TL[k] if OFF - 1e-6 <= tt(x) < OFF + dur]
+    TL['duration'] = dur
+json.dump(TL, open(os.path.join(D, 'audio.timeline.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+if not A.lrc and not A.no_lyrics:   # 没给歌词：自动找（找不到不算错，只是没有字幕）
+    an = os.path.join(D, 'analysis'); os.makedirs(an, exist_ok=True)
+    got = os.path.join(an, 'lyrics.lrc')
+    r = subprocess.run([sys.executable, os.path.join(HERE, 'fetch_lyrics.py'), A.audio, '--out', got]
+                       + (['--title', A.title] if A.title else []) + (['--artist', A.artist] if A.artist else []))
+    if r.returncode == 0 and os.path.exists(got): A.lrc = got; print('（自动找的歌词，写 TREATMENT 前先对着歌听一遍开头几句，时间或字不对就改 data/analysis/lyrics.lrc 后重建项目）')
+if A.lrc:
+    import re
+    raw = open(A.lrc, 'rb').read()
+    for enc in ('utf-8-sig', 'gb18030', 'big5'):   # 网上下载的 lrc 有不少是 GBK
+        try: lrc_text = raw.decode(enc); break
+        except UnicodeDecodeError: pass
+    else: lrc_text = raw.decode('utf-8', 'replace')
+    keep = []
+    for ln in lrc_text.splitlines():   # 截短时去掉 dur 之后开始的句子
+        m = re.match(r'\[(\d+):(\d+(?:\.\d+)?)\]', ln)
+        if m:
+            t0 = int(m.group(1)) * 60 + float(m.group(2))
+            if t0 >= OFF + dur or t0 < OFF - 0.5: continue
+            if OFF:   # 换成本段本地时间
+                ln = re.sub(r'([\[<])(\d+):(\d+(?:\.\d+)?)([\]>])', lambda q: '%s%02d:%05.2f%s' % (q.group(1), *divmod(max(0.0, int(q.group(2)) * 60 + float(q.group(3)) - OFF), 60), q.group(4)), ln)
+        keep.append(ln)
+    open(os.path.join(D, 'lyrics.lrc'), 'w', encoding='utf-8').write('\n'.join(keep) + '\n')
+elif not os.path.exists(os.path.join(D, 'lyrics.lrc')): open(os.path.join(D, 'lyrics.lrc'), 'w', encoding='utf-8').write('[00:00.00]♪\n')
+if A.report and os.path.abspath(A.report) != os.path.abspath(os.path.join(D, 'audio.report.md')): shutil.copy(A.report, os.path.join(D, 'audio.report.md'))
+subprocess.run([sys.executable, os.path.join(P, 'tools/songmv/make_data.py'), P], check=True)
+lines = json.load(open(os.path.join(D, 'lines.json'), encoding='utf-8'))['lines']
+lyr = [{'t0': round(l['t'] + OFF, 3), 't1': round(min(l['end'], l['t'] + 6.5) + OFF, 3), 'text': l['text']} for l in lines if not l['text'].startswith('♪') and l['t'] < dur]   # 字幕用全曲时间
+os.makedirs(os.path.join(P, 'assets'), exist_ok=True)
+json.dump(lyr, open(os.path.join(P, 'assets/lyrics.json'), 'w', encoding='utf-8'), ensure_ascii=False)
+
+# ---------- 角色 ----------
+H = {}; hp = os.path.join(A.chars, '身高校正.json')
+if os.path.exists(hp): H = json.load(open(hp, encoding='utf-8')).get('mv_scale', {})
+BAD = json.load(open(os.path.join(SKILL, 'characters/bad_frames.json'), encoding='utf-8'))
+for c in cast:
+    src, dst = os.path.join(A.chars, c), os.path.join(P, 'assets', c)
+    os.makedirs(dst, exist_ok=True)
+    if os.path.isdir(os.path.join(src, 'frames')): shutil.copytree(os.path.join(src, 'frames'), os.path.join(dst, 'frames'), dirs_exist_ok=True)
+    m = json.load(open(os.path.join(src, 'frames.json'), encoding='utf-8'))
+    m['mv_scale'] = m.get('mv_scale', H.get(c, 1.0))
+    if c in BAD: m['bad'] = {a: [i - 1 for i in v] for a, v in BAD[c].items()}
+    m.setdefault('eye_sole', round(0.61 * m['stand_h'] / m['mv_scale'], 1))   # 眼睛到脚底（素材像素）；有实测值就写进角色目录的 frames.json
+    json.dump(m, open(os.path.join(dst, 'frames.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    for extra in ('character.md', 'ref.png', 'ref.jpg'):
+        if os.path.exists(os.path.join(src, extra)): shutil.copy(os.path.join(src, extra), dst)
+subprocess.run([sys.executable, os.path.join(P, 'tools/keypoints.py')] + [os.path.join(P, 'assets', c) for c in cast], check=True)
+
+# ---------- plan.json ----------
+pp = os.path.join(P, 'plan.json')
+if not os.path.exists(pp):
+    plan = {'segment': 'MV', 'maker': A.name, 'lead': A.lead or cast[0], 'start': round(OFF * 24), 'end': round(OFF * 24) + round(dur * 24),
+            'tempo': {'beat0': round(beat0, 4), 'spb': round(spb, 4)}, 'cast': cast,
+            'scenes': [], 'shots': [], 'cuts': [], 'incamera': [], 'handoffs': [], 'emotes': [],
+            'tracks': {c: [] for c in cast}, 'extra_actions': {c: ['idle'] for c in cast},
+            'sizes': {}, 'occlude': [], 'treadmill': []}
+    json.dump(plan, open(pp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump({'note': '由 plan.json 的动作轨生成（python tools/run.py actions）', 'actions': [], 'subtle': []},
+          open(os.path.join(P, 'ACTIONS.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1) if not os.path.exists(os.path.join(P, 'ACTIONS.json')) else None
+print(f'项目建好了：{P}\n  {dur:.1f} 秒，{round(dur * 24)} 帧（全曲第 {round(OFF * 24)}–{round(OFF * 24) + round(dur * 24) - 1} 帧），全曲 {n} 拍（{60 / spb:.1f} BPM），{len(lyr)} 句歌词，角色 {", ".join(cast)}')
+if not A.seconds and not OFF:
+    full = TL['duration']; secs = TL.get('sections', [])
+    print(f'这首歌 {full / 60:.0f} 分 {full % 60:02.0f} 秒，{len(secs) + 1} 个段落（分界在 ' + '、'.join(f'{s if isinstance(s, (int, float)) else s.get("time", 0):.1f}' for s in secs) + ' 秒）。'
+          '整首做成一个项目还是拆成几段，由你判断，见 SKILL.md「先决定：一个项目还是分段」。')
+print('下一步：cd 进项目，python tools/run.py doctor，再 python tools/run.py still 1 5 看占位画面能不能出图。')

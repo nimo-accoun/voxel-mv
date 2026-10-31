@@ -1,0 +1,5 @@
+{
+ "说明": "已知坏帧（帧序从 1 数）。new_project.py 会写进项目 assets/<角色>/frames.json 的 bad（从 0 数），体素关 V5 一次都不许用。",
+ "gemini": {"run_side": [3, 4, 5], "sleep": [4]},
+ "qwen": {"sit_idle": [4]}
+}

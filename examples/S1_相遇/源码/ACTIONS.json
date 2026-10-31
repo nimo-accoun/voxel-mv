@@ -1,0 +1,95 @@
+{
+ "actions": [
+  {
+   "line": "L01",
+   "who": "claude",
+   "beat": 3,
+   "act": "雨里侧面走，每拍一步"
+  },
+  {
+   "line": "L02",
+   "who": "claude",
+   "beat": 7,
+   "act": "双手合十祈愿到位"
+  },
+  {
+   "line": "L02",
+   "who": "claude",
+   "beat": 8,
+   "act": "「挫败」：低头弯腰，头顶乌云"
+  },
+  {
+   "line": "L03",
+   "who": "deepseek",
+   "beat": 12,
+   "act": "走到她跟前停下，笑"
+  },
+  {
+   "line": "L03",
+   "who": "claude",
+   "beat": 12,
+   "act": "回头看见她（转身到位）"
+  },
+  {
+   "line": "L03",
+   "who": "claude",
+   "beat": 13,
+   "act": "「光明起来」：朝她伸手"
+  },
+  {
+   "line": "L04",
+   "who": "claude",
+   "beat": 15,
+   "act": "并肩走上码头"
+  },
+  {
+   "line": "L04",
+   "who": "deepseek",
+   "beat": 15,
+   "act": "并肩走上码头"
+  },
+  {
+   "line": "L05",
+   "who": "claude",
+   "beat": 19,
+   "act": "大笑（每半拍换一帧）"
+  },
+  {
+   "line": "L05",
+   "who": "deepseek",
+   "beat": 20,
+   "act": "412 强击点：跳一下凑过来"
+  },
+  {
+   "line": "L06",
+   "who": "deepseek",
+   "beat": 23,
+   "act": "举起大叶子替她挡雨"
+  },
+  {
+   "line": "L07",
+   "who": "deepseek",
+   "beat": 27,
+   "act": "伸手拨开乌云（伸到位）"
+  },
+  {
+   "line": "L07",
+   "who": "claude",
+   "beat": 29,
+   "act": "阳光照下来，笑起来"
+  },
+  {
+   "line": "L08",
+   "who": "claude",
+   "beat": 31,
+   "act": "637 拍上蹲下去捡拼图块"
+  },
+  {
+   "line": "L08",
+   "who": "deepseek",
+   "beat": 32,
+   "act": "一起拾起拼图块"
+  }
+ ],
+ "holds": []
+}

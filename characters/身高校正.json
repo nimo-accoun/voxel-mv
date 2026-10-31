@@ -1,0 +1,5 @@
+{
+ "说明": "按眼睛到脚底的距离统一身高。frames.json 的 stand_h 是含头饰的总高，耳朵/发饰/角高的角色身体会被缩小；乘上 mv_scale 后各角色眼睛到脚底一致（目测量，误差约1%）。引擎里 k = H * mv_scale / stand_h。",
+ "参考眼底距": "stand_h=500 时 305px",
+ "mv_scale": {"claude": 0.956, "deepseek": 0.978, "gemini": 1.0, "zai": 1.0, "qwen": 1.013, "gpt": 1.0, "kimi": 1.0}
+}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="node_modules/@fontsource/zcool-kuaile/index.css">
+<style>
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden}
+#gl{position:absolute;inset:0}
+#cap{position:absolute;left:0;right:0;bottom:70px;text-align:center;font-family:'ZCOOL KuaiLe',sans-serif;font-size:58px;color:#fff;
+  letter-spacing:4px;-webkit-text-stroke:0;text-shadow:0 0 2px #7a6bc4,0 0 2px #7a6bc4,3px 3px 0 #7a6bc4,-3px 3px 0 #7a6bc4,3px -3px 0 #7a6bc4,-3px -3px 0 #7a6bc4,0 4px 0 #7a6bc4,0 -4px 0 #7a6bc4,4px 0 0 #7a6bc4,-4px 0 0 #7a6bc4,0 8px 16px rgba(40,20,80,.45);}
+#fx{position:absolute;inset:0;pointer-events:none}
+#veil{position:absolute;inset:0;pointer-events:none}
+</style></head>
+<body><div id="stage"><canvas id="gl" width="1920" height="1080"></canvas><canvas id="fx" width="1920" height="1080"></canvas><div id="cap"></div><div id="veil"></div></div>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js"}}</script>
+<script type="module" src="main.js"></script>
+</body></html>

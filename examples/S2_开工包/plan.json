@@ -1,0 +1,458 @@
+{
+ "segment": "S2",
+ "maker": "DeepSeek",
+ "lead": "deepseek",
+ "start": 688,
+ "end": 1353,
+ "cast": [
+  "deepseek",
+  "gemini"
+ ],
+ "color": "蓝（DeepSeek）",
+ "idea": "烟花节的夜晚，方块港口小镇的石阶和屋顶。烟花是一团团发光小方块，炸开、悬停、熄灭成灰色方块落下。「时差」用光来拍：Gemini 那边总是被下一朵烟花照亮，DeepSeek 这边总是刚灭。情绪：甜 → 恍惚 → 追 → 失落 → 安静。",
+ "scenes": [
+  {
+   "id": "S2-A",
+   "f0": 688,
+   "f1": 903,
+   "world": "烟花节港口小镇的石阶",
+   "look": "蓝紫夜色，被烟花一阵阵照亮"
+  },
+  {
+   "id": "S2-B",
+   "f0": 903,
+   "f1": 1169,
+   "world": "屋顶和沿河小路（追不上）",
+   "look": "暗蓝夜色，只有 Gemini 那边被烟花照亮"
+  },
+  {
+   "id": "S2-C",
+   "f0": 1169,
+   "f1": 1353,
+   "world": "空下来的石阶，只剩 DeepSeek",
+   "look": "灰蓝，烟花熄灭后的冷色"
+  }
+ ],
+ "shots": [
+  {
+   "id": "S2-01",
+   "f0": 688,
+   "f1": 739,
+   "lyric": "你对我说的情话",
+   "camera": "中景，镜头从奶白里慢慢后拉",
+   "need": "情话：两人挨着，拼图在 DeepSeek 手里，烟花刚开始",
+   "action": "DeepSeek `hold_look` 捧着拼图，每拍在第 3/4 帧来回；Gemini 在她右边 `idle` 每拍一姿势",
+   "emote": "爱心@719（DeepSeek）",
+   "fx": "688–689 纯色 #FFF4E0；奶白方块向外炸开变成烟花火星，露出夜景；699 第一朵烟花",
+   "transition": "T1 入场：白闪褪开 @688–699"
+  },
+  {
+   "id": "S2-02",
+   "f0": 740,
+   "f1": 820,
+   "lyric": "像转瞬即逝的烟花",
+   "camera": "大远景低机位仰拍，慢慢上摇",
+   "need": "两人一起仰望满天烟花（必须有的画面）",
+   "action": "两人 `look_up[1→4]` @740–760，第 4 帧落在 760；之后每拍在第 3/4 帧来回",
+   "emote": "星星@780（两人）",
+   "fx": "烟花落在 760、801 两个拍上炸开；火星方块飘落",
+   "transition": "方块烟花雨落下盖住画面再散开 @740"
+  },
+  {
+   "id": "S2-03",
+   "f0": 821,
+   "f1": 902,
+   "lyric": "只停在绽放一刹那",
+   "camera": "中景，固定",
+   "need": "烟花只亮一刹那：Gemini 够到的那一下就灭了",
+   "action": "Gemini `reach_out[1→4]` @821–842 伸手够烟花；883 烟花熄灭，`reach_out` 倒放回第 1 帧 @883–903；DeepSeek `hold_look` 看着她",
+   "emote": "感叹号@842（Gemini）、省略号@883（DeepSeek）",
+   "fx": "842 烟花在 Gemini 指尖炸开；883 熄灭成灰方块掉落",
+   "transition": "烟花光爆体素化 @821"
+  },
+  {
+   "id": "S2-04",
+   "f0": 903,
+   "f1": 1004,
+   "lyric": "我却已无法自拔",
+   "camera": "过肩，从 DeepSeek 背后看 Gemini，焦点从 DeepSeek 移到 Gemini",
+   "need": "DeepSeek 看着 Gemini 的背影，越陷越深",
+   "action": "Gemini `turn_back` 倒放 @903–924 转身背对；`walk_back` 每拍一步 @944–1004 走远；DeepSeek `idle` 每拍一姿势",
+   "emote": "爱心@944、爱心（更大）@985（DeepSeek）",
+   "fx": "远处烟花只照亮 Gemini",
+   "transition": "拉远 @903"
+  },
+  {
+   "id": "S2-05",
+   "f0": 1005,
+   "f1": 1086,
+   "lyric": "我们的爱总有时差",
+   "camera": "全景，侧面横移跟拍",
+   "need": "时差：一前一后，距离越拉越大（必须有的画面）",
+   "action": "Gemini `walk_side` 每拍一步往右；DeepSeek `run_side` 每拍两步在后面追，距离从 1.5 个身高拉到 4 个；1067 DeepSeek 停下 `idle`，Gemini 继续走出画",
+   "emote": "汗滴@1026、问号@1067（DeepSeek）",
+   "fx": "烟花总在 Gemini 头顶炸开（1026、1046），DeepSeek 头顶的刚好熄灭",
+   "transition": "甩镜横移 @1005"
+  },
+  {
+   "id": "S2-06",
+   "f0": 1087,
+   "f1": 1168,
+   "lyric": "也为你骗自己放下",
+   "camera": "近景，慢慢推近",
+   "need": "骗自己放下：边哭边挥手",
+   "action": "DeepSeek `cry` 每拍一姿势 @1087–1128；`wave_bye[1→4]` @1128–1148 对空中挥手（装作放下），之后每拍在第 3/4 帧来回",
+   "emote": "泪滴@1108、乌云@1148（DeepSeek）",
+   "fx": "泪珠贴图；灰方块慢慢飘落",
+   "transition": "溶解（灰烬颗粒）@1087"
+  },
+  {
+   "id": "S2-07",
+   "f0": 1169,
+   "f1": 1270,
+   "lyric": "爱炙热的你却忘了爱自己",
+   "camera": "全景，慢慢拉远到大远景",
+   "need": "DeepSeek 抱膝坐下，只剩她一个（必须有的画面）",
+   "action": "DeepSeek `hug_knees[1→4]` @1169–1189 抱膝坐下，之后每拍在第 3/4 帧来回，加每拍呼吸起伏",
+   "emote": "心碎@1230（DeepSeek）",
+   "fx": "1230 最后一朵烟花照亮她一下又灭",
+   "transition": "横条滑移 @1169"
+  },
+  {
+   "id": "S2-08",
+   "f0": 1271,
+   "f1": 1352,
+   "lyric": "（同一句，拖长音）",
+   "camera": "近景推到特写，最后对准 Gemini 头部",
+   "need": "远处的 Gemini，镜头推到她脸上",
+   "action": "Gemini `idle` @1271–1292；`pray[1→4]` @1292–1312 合十闭眼，之后每拍在第 3/4 帧来回",
+   "emote": "闪光@1312（Gemini）",
+   "fx": "1342–1349 圆形黑场收向 (50%, 40%)；1350–1352 全黑",
+   "transition": "推进穿梭 @1271；T2 出场：圆形收黑 @1342–1352"
+  }
+ ],
+ "cuts": [
+  {
+   "c": 740,
+   "len": 14,
+   "mode": "rain",
+   "glowAmt": 0,
+   "from": "S2-01",
+   "to": "S2-02",
+   "note": "方块烟花雨落下盖住画面再散开"
+  },
+  {
+   "c": 821,
+   "len": 12,
+   "mode": "voxel",
+   "glowAmt": 0.35,
+   "from": "S2-02",
+   "to": "S2-03",
+   "note": "烟花光爆成体素"
+  },
+  {
+   "c": 903,
+   "len": 12,
+   "mode": "pullback",
+   "glowAmt": 0,
+   "from": "S2-03",
+   "to": "S2-04",
+   "note": "拉远到过肩"
+  },
+  {
+   "c": 1005,
+   "len": 10,
+   "mode": "whip",
+   "glowAmt": 0,
+   "from": "S2-04",
+   "to": "S2-05",
+   "note": "甩镜横移"
+  },
+  {
+   "c": 1087,
+   "len": 14,
+   "mode": "voxel",
+   "glowAmt": 0,
+   "from": "S2-05",
+   "to": "S2-06",
+   "note": "画面碎成灰烬方块再拼回"
+  },
+  {
+   "c": 1169,
+   "len": 12,
+   "mode": "rows",
+   "glowAmt": 0,
+   "from": "S2-06",
+   "to": "S2-07",
+   "note": "横条滑移"
+  },
+  {
+   "c": 1271,
+   "len": 10,
+   "mode": "through",
+   "glowAmt": 0.12,
+   "from": "S2-07",
+   "to": "S2-08",
+   "note": "推进穿梭到远处的 Gemini"
+  }
+ ],
+ "incamera": [
+  {
+   "shot": "S2-07",
+   "f0": 1220,
+   "f1": 1250,
+   "key": 1230,
+   "note": "最后一朵烟花照亮 DeepSeek 又灭"
+  }
+ ],
+ "handoffs": [
+  {
+   "side": "in",
+   "card": "T1",
+   "shot": "S2-01",
+   "f0": 688,
+   "f1": 699,
+   "key": 699,
+   "kind": "flash",
+   "note": "交接卡 T1：奶白闪，方块裂开露出画面"
+  },
+  {
+   "side": "out",
+   "card": "T2",
+   "shot": "S2-08",
+   "f0": 1342,
+   "f1": 1353,
+   "key": 1353,
+   "kind": "iris",
+   "note": "交接卡 T2：圆形收黑到 (50%, 40%)，1350–1352 全黑"
+  }
+ ],
+ "emotes": [
+  {
+   "who": "deepseek",
+   "g": "heart",
+   "f0": 719,
+   "f1": 739,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "star",
+   "f0": 780,
+   "f1": 820,
+   "dx": 0.3
+  },
+  {
+   "who": "gemini",
+   "g": "star",
+   "f0": 780,
+   "f1": 820,
+   "dx": -0.3
+  },
+  {
+   "who": "gemini",
+   "g": "exclaim",
+   "f0": 842,
+   "f1": 882,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "dots",
+   "f0": 883,
+   "f1": 902,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "heart",
+   "f0": 944,
+   "f1": 984,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "heart",
+   "f0": 985,
+   "f1": 1004,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "sweat",
+   "f0": 1026,
+   "f1": 1066,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "question",
+   "f0": 1067,
+   "f1": 1086,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "tear",
+   "f0": 1108,
+   "f1": 1148,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "cloud",
+   "f0": 1148,
+   "f1": 1168,
+   "dx": 0.3
+  },
+  {
+   "who": "deepseek",
+   "g": "heartbreak",
+   "f0": 1230,
+   "f1": 1270,
+   "dx": 0.3
+  },
+  {
+   "who": "gemini",
+   "g": "sparkle",
+   "f0": 1312,
+   "f1": 1352,
+   "dx": 0.3
+  }
+ ],
+ "tracks": {
+  "deepseek": [
+   [
+    "ping",
+    "hold_look",
+    688,
+    null,
+    2,
+    3
+   ],
+   [
+    "once",
+    "look_up",
+    743,
+    760
+   ],
+   [
+    "ping",
+    "hold_look",
+    821,
+    null,
+    2,
+    3
+   ],
+   [
+    "loop",
+    "idle",
+    903,
+    null
+   ],
+   [
+    "loop",
+    "run_side",
+    1005,
+    null
+   ],
+   [
+    "loop",
+    "idle",
+    1067,
+    null
+   ],
+   [
+    "loop",
+    "cry",
+    1087,
+    null
+   ],
+   [
+    "once",
+    "wave_bye",
+    1128,
+    1148
+   ],
+   [
+    "once",
+    "hug_knees",
+    1172,
+    1189
+   ],
+   [
+    "off",
+    1271,
+    null
+   ]
+  ],
+  "gemini": [
+   [
+    "loop",
+    "idle",
+    688,
+    null
+   ],
+   [
+    "once",
+    "look_up",
+    743,
+    760
+   ],
+   [
+    "once",
+    "reach_out",
+    824,
+    842
+   ],
+   [
+    "once",
+    "reach_out",
+    883,
+    903,
+    {
+     "rev": true
+    }
+   ],
+   [
+    "once",
+    "turn_back",
+    906,
+    924,
+    {
+     "rev": true
+    }
+   ],
+   [
+    "loop",
+    "walk_back",
+    944,
+    null
+   ],
+   [
+    "loop",
+    "walk_side",
+    1005,
+    null
+   ],
+   [
+    "off",
+    1087,
+    null
+   ],
+   [
+    "loop",
+    "idle",
+    1271,
+    null
+   ],
+   [
+    "once",
+    "pray",
+    1292,
+    1312
+   ]
+  ]
+ },
+ "extra_actions": {}
+}

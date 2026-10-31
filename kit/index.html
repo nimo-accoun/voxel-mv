@@ -1,0 +1,17 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="vendor/zcool-kuaile/index.css">
+<style>
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden}
+#gl,#fx{position:absolute;inset:0}
+#fx,#veil{pointer-events:none}
+#veil{position:absolute;inset:0}
+/* 字幕：字体、位置、颜色都可以改；字高要 ≥ 画面高 4.5%（≥ 49px） */
+#cap{position:absolute;left:0;right:0;bottom:70px;text-align:center;font-family:'ZCOOL KuaiLe',sans-serif;font-size:58px;color:#fff;letter-spacing:4px;
+  text-shadow:0 0 2px #7a6bc4,0 0 2px #7a6bc4,3px 3px 0 #7a6bc4,-3px 3px 0 #7a6bc4,3px -3px 0 #7a6bc4,-3px -3px 0 #7a6bc4,0 4px 0 #7a6bc4,0 -4px 0 #7a6bc4,4px 0 0 #7a6bc4,-4px 0 0 #7a6bc4,0 8px 16px rgba(40,20,80,.45);}
+</style></head>
+<body><div id="stage"><canvas id="gl" width="1920" height="1080"></canvas><canvas id="fx" width="1920" height="1080"></canvas><div id="cap"></div><div id="veil"></div></div>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<script type="module" src="shots.js"></script>
+</body></html>

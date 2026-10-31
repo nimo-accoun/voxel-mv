@@ -1,0 +1,2093 @@
+{
+ "canvas": 1600,
+ "baseline_y": 1440.0,
+ "center_x": 800.0,
+ "stand_h": 1120.0,
+ "sheets": {
+  "s1_side_move": {
+   "file": "sheets/s1_side_move.png",
+   "scale": 1.0810810810810811,
+   "bg": null,
+   "gridlines": 0,
+   "size": [
+    5016,
+    5016
+   ],
+   "stand_h_src": 259.0,
+   "row_runs": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "s2_turn_move": {
+   "file": "sheets/s2_turn_move.png",
+   "scale": 1.0707456978967496,
+   "bg": null,
+   "gridlines": 0,
+   "size": [
+    5016,
+    5016
+   ],
+   "stand_h_src": 261.5,
+   "row_runs": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "s3_lyric": {
+   "file": "sheets/s3_lyric.png",
+   "scale": 0.9556313993174061,
+   "bg": null,
+   "gridlines": 0,
+   "size": [
+    5016,
+    5016
+   ],
+   "stand_h_src": 293.0,
+   "row_runs": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "s4_emotion": {
+   "file": "sheets/s4_emotion.png",
+   "scale": 1.0144927536231885,
+   "bg": null,
+   "gridlines": 0,
+   "size": [
+    5016,
+    5016
+   ],
+   "stand_h_src": 276.0,
+   "row_runs": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "s5_accent": {
+   "file": "sheets/s5_accent.png",
+   "scale": 0.9523809523809523,
+   "bg": null,
+   "gridlines": 0,
+   "size": [
+    5016,
+    5016
+   ],
+   "stand_h_src": 294.0,
+   "row_runs": [
+    4,
+    4,
+    4,
+    4
+   ]
+  }
+ },
+ "actions": {
+  "walk_side": {
+   "label": "侧面走",
+   "fps": 10,
+   "loop": true,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s1_side_move",
+   "row": 0,
+   "scale": 1.0810810810810811,
+   "frames": [
+    {
+     "file": "frames/walk_side/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 260,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 255,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 255,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 261,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/05.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 258,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/06.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 259,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/07.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 260,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_side/08.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 259,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "run_side": {
+   "label": "侧面跑",
+   "fps": 12,
+   "loop": true,
+   "anchor": "air",
+   "stand": false,
+   "steady": true,
+   "sheet": "s1_side_move",
+   "row": 2,
+   "scale": 1.0810810810810811,
+   "frames": [
+    {
+     "file": "frames/run_side/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 248,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 242,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 249,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 236,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/05.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 248,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/06.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 240,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/07.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 247,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/run_side/08.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 231,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "walk_front": {
+   "label": "正面走（走向镜头）",
+   "fps": 8,
+   "loop": true,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s2_turn_move",
+   "row": 0,
+   "scale": 1.0707456978967496,
+   "frames": [
+    {
+     "file": "frames/walk_front/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 264,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_front/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 263,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_front/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 265,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_front/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 262,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "walk_back": {
+   "label": "背面走（离开）",
+   "fps": 8,
+   "loop": true,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s2_turn_move",
+   "row": 1,
+   "scale": 1.0707456978967496,
+   "frames": [
+    {
+     "file": "frames/walk_back/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 258,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_back/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 259,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_back/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 259,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/walk_back/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 260,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "turn_back": {
+   "label": "回头（倒放=转身离开）",
+   "fps": 6,
+   "loop": false,
+   "anchor": "feet",
+   "stand": true,
+   "steady": false,
+   "sheet": "s2_turn_move",
+   "row": 2,
+   "scale": 1.0707456978967496,
+   "frames": [
+    {
+     "file": "frames/turn_back/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 259,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/turn_back/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 262,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/turn_back/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 262,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/turn_back/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 261,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "pick_up": {
+   "label": "蹲下拾起（收集回忆）",
+   "fps": 6,
+   "loop": false,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "s2_turn_move",
+   "row": 3,
+   "scale": 1.0707456978967496,
+   "frames": [
+    {
+     "file": "frames/pick_up/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 248,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/pick_up/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 233,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/pick_up/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 233,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/pick_up/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 247,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "sit_idle": {
+   "label": "坐着发呆",
+   "fps": 4,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": true,
+   "sheet": "s3_lyric",
+   "row": 0,
+   "scale": 0.9556313993174061,
+   "frames": [
+    {
+     "file": "frames/sit_idle/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 270,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/sit_idle/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 270,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/sit_idle/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 268,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/sit_idle/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 268,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "hug_knees": {
+   "label": "抱膝低头",
+   "fps": 5,
+   "loop": false,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "s3_lyric",
+   "row": 1,
+   "scale": 0.9556313993174061,
+   "frames": [
+    {
+     "file": "frames/hug_knees/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 250,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/hug_knees/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 251,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/hug_knees/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 231,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/hug_knees/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 231,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "look_up": {
+   "label": "仰望（看烟花/天空）",
+   "fps": 5,
+   "loop": false,
+   "anchor": "feet",
+   "stand": true,
+   "steady": false,
+   "sheet": "s3_lyric",
+   "row": 2,
+   "scale": 0.9556313993174061,
+   "frames": [
+    {
+     "file": "frames/look_up/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 296,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/look_up/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 296,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/look_up/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 296,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/look_up/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 295,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "reach_out": {
+   "label": "伸手",
+   "fps": 6,
+   "loop": false,
+   "anchor": "feet",
+   "stand": true,
+   "steady": false,
+   "sheet": "s3_lyric",
+   "row": 3,
+   "scale": 0.9556313993174061,
+   "frames": [
+    {
+     "file": "frames/reach_out/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 290,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/reach_out/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 291,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/reach_out/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 289,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/reach_out/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 279,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "cry": {
+   "label": "哭泣擦泪",
+   "fps": 5,
+   "loop": false,
+   "anchor": "feet",
+   "stand": true,
+   "steady": false,
+   "sheet": "s4_emotion",
+   "row": 0,
+   "scale": 1.0144927536231885,
+   "frames": [
+    {
+     "file": "frames/cry/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 270,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": true,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/cry/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 270,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": true,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/cry/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 270,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": true,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/cry/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 269,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": true,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "pray": {
+   "label": "双手合十祈愿",
+   "fps": 5,
+   "loop": false,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s4_emotion",
+   "row": 1,
+   "scale": 1.0144927536231885,
+   "frames": [
+    {
+     "file": "frames/pray/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 277,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/pray/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 277,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/pray/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 275,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/pray/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 277,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "hold_look": {
+   "label": "捧着东西看（回忆碎片）",
+   "fps": 5,
+   "loop": false,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s4_emotion",
+   "row": 2,
+   "scale": 1.0144927536231885,
+   "frames": [
+    {
+     "file": "frames/hold_look/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 277,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/hold_look/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 278,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/hold_look/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 279,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/hold_look/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 275,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "bow": {
+   "label": "鞠躬道谢",
+   "fps": 5,
+   "loop": false,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "s4_emotion",
+   "row": 3,
+   "scale": 1.0144927536231885,
+   "frames": [
+    {
+     "file": "frames/bow/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 271,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/bow/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 264,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/bow/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 249,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/bow/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 268,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "idle": {
+   "label": "待机呼吸",
+   "fps": 4,
+   "loop": true,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s5_accent",
+   "row": 0,
+   "scale": 0.9523809523809523,
+   "frames": [
+    {
+     "file": "frames/idle/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 293,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/idle/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 295,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/idle/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 291,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/idle/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 291,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "wave_bye": {
+   "label": "挥手告别",
+   "fps": 6,
+   "loop": true,
+   "anchor": "feet",
+   "stand": true,
+   "steady": true,
+   "sheet": "s5_accent",
+   "row": 1,
+   "scale": 0.9523809523809523,
+   "frames": [
+    {
+     "file": "frames/wave_bye/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 295,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/wave_bye/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 296,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/wave_bye/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 295,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/wave_bye/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 295,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "laugh": {
+   "label": "开心笑",
+   "fps": 6,
+   "loop": true,
+   "anchor": "feet",
+   "stand": true,
+   "steady": false,
+   "sheet": "s5_accent",
+   "row": 2,
+   "scale": 0.9523809523809523,
+   "frames": [
+    {
+     "file": "frames/laugh/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 295,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/laugh/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 288,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/laugh/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 284,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/laugh/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 290,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "sleep": {
+   "label": "睡着做梦",
+   "fps": 3,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": true,
+   "sheet": "s5_accent",
+   "row": 3,
+   "scale": 0.9523809523809523,
+   "frames": [
+    {
+     "file": "frames/sleep/01.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 155,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/sleep/02.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 154,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/sleep/03.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 155,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    },
+    {
+     "file": "frames/sleep/04.png",
+     "empty": false,
+     "touch": false,
+     "crowd": 0.0,
+     "blobs": 0,
+     "src_h": 154,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false,
+     "upscale": "ComfyUI SeedVR2 4x; original alpha retained"
+    }
+   ]
+  },
+  "typing": {
+   "label": "电脑前打字",
+   "fps": 8,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "电脑打字_16帧_4倍",
+   "row": null,
+   "scale": 1.075268817204301,
+   "frames": [
+    {
+     "file": "frames/typing/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/05.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/06.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/07.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/08.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/09.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/10.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/11.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/12.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/13.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/14.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/15.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/typing/16.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "idle_16": {
+   "label": "待机呼吸（16帧）",
+   "fps": 8,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "待机呼吸_16帧_4倍",
+   "row": null,
+   "scale": 0.9836065573770492,
+   "frames": [
+    {
+     "file": "frames/idle_16/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/05.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/06.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/07.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/08.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/09.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/10.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/11.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/12.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/13.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/14.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/15.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/idle_16/16.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "talk_16": {
+   "label": "说话（16帧）",
+   "fps": 8,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "说话_16帧_4倍",
+   "row": null,
+   "scale": 0.9836065573770492,
+   "frames": [
+    {
+     "file": "frames/talk_16/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/05.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/06.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/07.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/08.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/09.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/10.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/11.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/12.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/13.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/14.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/15.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/talk_16/16.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_sing": {
+   "label": "唱歌",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_01_4倍",
+   "row": 0,
+   "scale": 0.9900990099009901,
+   "frames": [
+    {
+     "file": "frames/stream_sing/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_sing/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_sing/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_sing/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_greeting": {
+   "label": "打招呼",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_01_4倍",
+   "row": 1,
+   "scale": 0.974025974025974,
+   "frames": [
+    {
+     "file": "frames/stream_greeting/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_greeting/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_greeting/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_greeting/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_clap": {
+   "label": "鼓掌",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_01_4倍",
+   "row": 2,
+   "scale": 0.9836065573770492,
+   "frames": [
+    {
+     "file": "frames/stream_clap/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_clap/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_clap/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_clap/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_thanks": {
+   "label": "害羞感谢",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_01_4倍",
+   "row": 3,
+   "scale": 1.0,
+   "frames": [
+    {
+     "file": "frames/stream_thanks/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_thanks/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_thanks/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_thanks/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_dance_step": {
+   "label": "舞步",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_02_4倍",
+   "row": 0,
+   "scale": 0.9868421052631579,
+   "frames": [
+    {
+     "file": "frames/stream_dance_step/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_dance_step/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_dance_step/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_dance_step/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_dance_hands": {
+   "label": "舞蹈手势",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_02_4倍",
+   "row": 1,
+   "scale": 0.970873786407767,
+   "frames": [
+    {
+     "file": "frames/stream_dance_hands/01.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_dance_hands/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_dance_hands/03.png",
+     "empty": false,
+     "touch": true,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_dance_hands/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_bounce": {
+   "label": "开心跳跃",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_02_4倍",
+   "row": 2,
+   "scale": 1.0169491525423728,
+   "frames": [
+    {
+     "file": "frames/stream_bounce/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_bounce/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_bounce/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_bounce/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_heart": {
+   "label": "比心",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_02_4倍",
+   "row": 3,
+   "scale": 0.9615384615384616,
+   "frames": [
+    {
+     "file": "frames/stream_heart/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_heart/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_heart/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_heart/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_happy": {
+   "label": "开心笑（直播）",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_03_4倍",
+   "row": 0,
+   "scale": 0.9868421052631579,
+   "frames": [
+    {
+     "file": "frames/stream_happy/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_happy/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_happy/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_happy/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_surprise": {
+   "label": "惊喜",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_03_4倍",
+   "row": 1,
+   "scale": 0.9771986970684039,
+   "frames": [
+    {
+     "file": "frames/stream_surprise/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_surprise/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_surprise/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_surprise/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_wink": {
+   "label": "眨眼互动",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_03_4倍",
+   "row": 2,
+   "scale": 0.974025974025974,
+   "frames": [
+    {
+     "file": "frames/stream_wink/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_wink/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_wink/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_wink/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  },
+  "stream_shy": {
+   "label": "害羞脸红",
+   "fps": 5,
+   "loop": true,
+   "anchor": "feet",
+   "stand": false,
+   "steady": false,
+   "sheet": "直播动作_03_4倍",
+   "row": 3,
+   "scale": 0.9803921568627451,
+   "frames": [
+    {
+     "file": "frames/stream_shy/01.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_shy/02.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_shy/03.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    },
+    {
+     "file": "frames/stream_shy/04.png",
+     "empty": false,
+     "touch": false,
+     "clipped": false,
+     "intentional_tear_droplets_preserved": false
+    }
+   ],
+   "note": "AI生成动作；切口与循环衔接需核查"
+  }
+ },
+ "rows": 4,
+ "cols": 4
+}
