@@ -33,7 +33,7 @@
 
 ## 电脑上要装的
 
-Windows、macOS、Linux 都能跑。需要 Node.js 20 以上、ffmpeg、Python 3（再 `pip install numpy pillow`）、Chrome 或 Edge。可选：`pip install faster-whisper`（网上查不到歌词时听歌识别），再加 `demucs` 先分离人声会更准。不用自己检查：AI 第一步会跑 `python tools/run.py doctor`，缺什么它会列出来，并给出安装命令。
+Windows、macOS、Linux 都能跑。需要 Node.js 20 以上、ffmpeg、Python 3（再 `pip install numpy pillow`）、Chrome 或 Edge。可选：`pip install faster-whisper`（网上查不到歌词时听歌识别；依赖踩坑和模型下载见 `references/lyrics-asr.md`，配套脚本是 `scripts/asr_lyrics.py` 和 `scripts/fetch_ct2_model.py`），再加 `demucs` 先分离人声会更准。不用自己检查：AI 第一步会跑 `python tools/run.py doctor`，缺什么它会列出来，并给出安装命令。
 
 doctor 最后一行「显卡渲染」如果是 `[慢]`（SwiftShader 之类），说明浏览器没用上显卡，出片会慢好几倍，照它下面的提示改。
 

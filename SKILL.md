@@ -80,6 +80,7 @@ references/engine.md             引擎速查（怎么写一个镜头、函数�
 references/plan-format.md        plan.json 每个字段
 references/relay.md              分段做：分段、交接卡、开工包、拼接
 references/common-problems.md    常见问题和修法
+references/lyrics-asr.md         没歌词时自己识别：依赖怎么装、模型怎么下、识别完怎么用真歌词换文字
 references/style/                画风参考图：01/02 两张角色合图（风格样张关拿它们对照），和帧图一致
 examples/yuai/                   《雨爱》完整源码示例、原始提示词、预览、检查报告；复现见 examples/yuai/README.md
 examples/S1_相遇/                《把回忆拼好给你》第 1 段（Claude 做）的源码、检查报告、接触表、风格样张记录
@@ -117,6 +118,7 @@ python $SKILL/scripts/asr_lyrics.py song.mp3 data/lyrics.lrc
 - `asr_lyrics.py` 用 ffmpeg 解成 16k 单声道再喂 numpy（绕开 PyAV 的 `metadata_errors` 版本差异），不开 VAD。
 - 模型目录用 `VOXEL_ASR_MODEL`，显卡用 `VOXEL_ASR_DEVICE=cuda`；`fetch_lyrics.py` 会优先用 `models/faster-whisper-<name>`。
 - **识别结果一定有错字**（歌唱 + 伴奏）。靠谱的做法：拿一两句去搜歌名确认是哪首，用真歌词换掉文字、保留识别出来的时间轴，再 `--lrc` 重建。
+- 装不上、报错、想用显卡，见 `references/lyrics-asr.md`（含常见报错表）。
 
 自动分析的节拍：拍点一般很准；段落和 drop 是估计，写 TREATMENT 时用耳朵核对。速度差一倍（报告里 BPM 明显不对）就 `python $SKILL/scripts/analyze_audio.py song.mp3 --bpm 大概的值 --out 项目/data/analysis` 重分析，再用 `--timeline` 重建项目。
 
